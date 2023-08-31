@@ -351,7 +351,7 @@ nav ul li a {
 }
 
 .about__tiles{
-  margin: 2rem 0 2rem 0;
+  margin: 100px 0 0 0;
 }
 
 .about__tile {
@@ -618,6 +618,7 @@ nav ul li a {
 
 .accordian__container{
   width: 95% ;
+  max-width: var(--max-width);
 }
 
 /* Style the buttons that are used to open and close the accordion panel */
