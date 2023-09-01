@@ -6,6 +6,8 @@
   --gap: 5px;
 }
 
+
+
 @font-face {
   font-family: "Panchang";
   src: url(./assets/fonts/Panchang-Regular.otf) format("opentype");
@@ -863,5 +865,18 @@ footer{
   .right{
     left: calc(100% - 30px);
   }
+
+}
+
+.observe, .hero_observe{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .5s ease-in-out;
+}
+
+.observe.reveal,
+.hero_observe.reveal{
+  transform: translateY(0);
+  opacity: 1;
 
 }

@@ -249,3 +249,38 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+// Animate on scroll
+
+let options = {
+    rootMargin: "0px",
+    threshold: .5,
+  };
+
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      // Each entry describes an intersection change for one observed
+    
+        if(entry.isIntersecting){
+            entry.target.classList.add('reveal')
+        }
+
+    });
+  };
+  
+  let observer = new IntersectionObserver(callback, options);
+
+  [...document.querySelectorAll('.observe')].forEach(el => {
+    observer.observe(el)
+  });
+
+  setTimeout(() => {
+    [...document.querySelectorAll('.hero_observe')].forEach((el, idx) => {
+        setTimeout(() => {
+            el.classList.add('reveal')
+        }, (idx + 1) * 500)
+       
+    })
+  },500)
+ 
