@@ -268,7 +268,53 @@ let options = {
 
     });
   };
+
+  // send mail from contact form
+
+  const form = document.querySelector('.form');
+  const name = document.querySelector('.name');
+  const email = document.querySelector('.email');
+  const mobNum = document.querySelector('.mobnum');
+  const message = document.querySelector('.message')
+  const sendingDiv = document.querySelector('.sending__div')
+
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    console.log('sending...')
+    sendingDiv.style.display = 'flex'
+    try{
+      let request = await fetch("https://formsubmit.co/ajax/Info@loftconversionsessex.co.uk", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name.value,
+            email: email.value,
+            number: mobNum.value,
+            message: message.value
+        })
+      })
+      let res = await request.json();
+      console.log(res)
+
+      alert('Thank you for your email. We will respond shortly.')
+      name.value = ''
+      email.value = ''
+      mobNum.value = ''
+      message.value = ''
+      sendingDiv.style.display = 'none'
+    }catch(err){
+        alert('Something went wrong. Please try again.')
+        console.log(err)
+    }
+  }
   
+  form.addEventListener('submit', handleSubmit)
+
+
   let observer = new IntersectionObserver(callback, options);
 
   [...document.querySelectorAll('.observe')].forEach(el => {

@@ -880,3 +880,38 @@ footer{
   opacity: 1;
 
 }
+
+.sending__div{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ab2b30;
+  background-color: white;
+  z-index: 100;
+  display: none;
+  pointer-events: none;
+}
+.sending__div p{
+  color: #131313;
+  animation: fadeInOut 2s infinite linear;
+}
+
+@keyframes fadeInOut{
+  0%{
+    opacity: 0.1;
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0.1;
+  }
+}
