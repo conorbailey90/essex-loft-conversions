@@ -634,10 +634,18 @@ nav ul li a {
   border: none;
   outline: none;
   transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
 }
 
-.accordion.active h5{
-  color: #ab2b30;
+.triangle__wrapper{
+  transition: .2s;
+}
+
+.accordion.active .triangle__wrapper{
+  transform: rotate(90deg);
 
 }
 
@@ -870,7 +878,7 @@ footer{
 
 .observe, .hero_observe{
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(20px);
   transition: .5s ease-in-out;
 }
 

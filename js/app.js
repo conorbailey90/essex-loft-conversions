@@ -1,4 +1,4 @@
-import { arrowLeft, arrowRight } from "./svgExport.js";
+import { arrowLeft, arrowRight, triangle } from "./svgExport.js";
 
 // GLOBAL
 let isMobile = false; //initiate as false
@@ -234,8 +234,14 @@ testimonials.forEach((t, idx) => {
 
  // FAQ
 
-
-var acc = document.getElementsByClassName("accordion");
+var acc = [...document.querySelectorAll(".accordion")];
+acc.forEach(accordian => {
+    let div = document.createElement('div');
+    div.style.width = '15px'
+    div.innerHTML = triangle;
+    div.className = 'triangle__wrapper'
+    accordian.appendChild(div)
+})
 var i;
 
 for (i = 0; i < acc.length; i++) {
