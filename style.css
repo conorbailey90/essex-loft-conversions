@@ -45,6 +45,7 @@ p{
   text-decoration: none;
   color: var(--main-text-color);
   font-family: "Panchang";
+  -webkit-font-smoothing: antialiased;
 }
 
 html,
